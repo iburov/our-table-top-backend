@@ -5,7 +5,6 @@ const paginatedResults = require("../utils/paginatedResults");
 router.route("").get(paginatedResults(User), (req, res) => {
   User.find()
     .then((users) => {
-      console.log(users);
       res.json(res.paginatedResults);
     })
     .catch((err) => res.status(400).json("Error: " + err));
